@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* Minden HTML elem külső és belső margóját 0-ra raktuk */
+    box-sizing: border-box;
+    /* elem szélességébe width értékbe beletartozik a padding és border */
+}
+
+body {
+    width: 90%;
+    max-width: 900px;
+    margin: auto; /* Középre az oldalt */
+    background-color: rgb(233, 218, 230);
+}
+
+main {
+    /* Tarolo, szülőelem */
+    display: grid;
+    grid-template-columns: 1fr 200px;
+    grid-template-areas: 
+    "n n"
+    "ar a"
+    "f f";
+}
+
+nav ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    list-style-type: none;
+}
+nav a {
+    text-decoration: none;
+}
+nav {
+    grid-area: n;
+}
+footer {
+    margin-top: 10px;
+    grid-area: f;
+    background-color: white;
+}
+aside {
+    grid-area: a;
+    background-color: white;
+}
+
+img {
+    width: 200px;
+}
+article {
+    grid-area: ar;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+div {
+    background-color: white;
+    margin: 10px;
+}
+
+div#bal {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.asd {
+    text-align: right;
+}
+#eredmeny {
+    color: brown;
+    text-align: center;
+    border-top: solid black;
+    font-weight: bold;
+}
+#fizetes {
+    color: brown;
+    margin-top: 190px;
+}
+
+div#ar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+}
+
+/* TABLET NÉZET - RESZPONZIVITÁS KIALAKÍTÁSA */
+@media only screen and (max-width: 960px) { /* töréspont */
+    body, main {
+      /* background-color: lightblue; */
+      width: 100%;
+    }
+    main {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "n n"
+        "ar a"
+        "f f";
+    }
+    nav ul {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
+    article {
+        grid-area: ar;
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+  }
+
+/* MOBIL NÉZET - RESZPONZIVITÁS KIALAKÍTÁSA */
+@media only screen and (max-width: 500px) { /* töréspont */
+    body, main {
+      /* background-color: lightblue; */
+      width: 100%;
+    }
+    main {
+        font-size: 6vw;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "n"
+        "a"
+        "ar"
+        "f";
+    }
+    nav ul {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
+    article {
+        grid-area: ar;
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+  }
